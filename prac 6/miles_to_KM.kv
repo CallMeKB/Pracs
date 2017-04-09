@@ -1,0 +1,21 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: input_number
+            text: '30'
+            font_size: 30
+            multiline: False
+            size_hint: 0.75, 0.3
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                text: 'Up'
+            Button:
+                text: 'Down'
+    Button:
+        text: 'Convert miles to km'
+    Label:
+        id: output_label
+        font_size: 40
