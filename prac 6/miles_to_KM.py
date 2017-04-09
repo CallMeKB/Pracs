@@ -12,19 +12,26 @@ from kivy.core.window import Window
 
 class MilesToKilometers(App):
     def build(self):
-        Window.size = (400, 150)
+        Window.size = (400, 100)
         self.title = "Convert Miles to Kilometres"
         self.root = Builder.load_file('miles_to_KM.kv')
         return self.root
 
+    def increment_value(self, increment):
+        value = self.validate_miles() + increment
+        self.root.ids.input_number.text = str(value)
+        self.convert_miles_to_km()
 
-    def increment_value(self, value, increment):
-        adjustedValue = value + increment
-        self.root.ids.input_number.text = str(adjustedValue)
-
-    def convert_miles_to_km(self, value):
+    def convert_miles_to_km(self):
+        value = self.validate_miles()
         result = value * 1.609344
         self.root.ids.output_label.text = str(result)
 
+    def validate_miles(self):
+        try:
+            value = float(self.root.ids.input_number.text)
+            return value
+        except:
+            return 0
 
 MilesToKilometers().run()
