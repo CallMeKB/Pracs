@@ -5,10 +5,9 @@ for word in text.split():
         words[word] += 1
     else:
         words[word] = 1
+length = 0
 for key in words.keys():
-    length = 0
     if len(key) > length:
         length = len(key)
-print(length)
-for key, value in words.items():
+for key, value in sorted(words.items()):
     print("{:{}} : {}".format(key, length, value))
