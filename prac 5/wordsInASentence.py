@@ -5,5 +5,10 @@ for word in text.split():
         words[word] += 1
     else:
         words[word] = 1
+for key in words.keys():
+    length = 0
+    if len(key) > length:
+        length = len(key)
+print(length)
 for key, value in words.items():
-    print("{:{}} : {}".format(key, 6, value))
+    print("{:{}} : {}".format(key, length, value))
