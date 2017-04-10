@@ -5,9 +5,7 @@ for word in text.split():
         words[word] += 1
     else:
         words[word] = 1
-length = 0
-for key in words.keys():
-    if len(key) > length:
-        length = len(key)
+lengths = (len(word) for word in words)
+maxLength = max(lengths)
 for key, value in sorted(words.items()):
-    print("{:{}} : {}".format(key, length, value))
+    print("{:{}} : {}".format(key, maxLength, value))
