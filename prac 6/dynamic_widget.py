@@ -7,6 +7,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.label import Label
 
+
 class DynamicWidgetsApp(App):
 
     def __init__(self, **kwargs):
