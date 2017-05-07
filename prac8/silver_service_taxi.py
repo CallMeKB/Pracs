@@ -16,7 +16,7 @@ class SilverServiceTaxi(Taxi):
 
     def __str__(self):
         """return a string like Taxi but with flagfall included"""
-        return "{} plus flagfall of {}".format(super().__str__(), self.flagfall)
+        return "{} plus flagfall of ${:.2f}".format(super().__str__(), self.flagfall)
 
     def get_fare(self):
         """return a float like Taxi but with flagfall included"""
