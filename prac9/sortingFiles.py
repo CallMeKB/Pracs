@@ -11,13 +11,13 @@ def main():
     print("Current directory is", os.getcwd())
     os.chdir('FilesToSort')
     # print(os.getcwd())
-    extensions = []
+    extensions = set()
     for filename in os.listdir('.'):
         if not os.path.isdir(filename):
             file = filename.split('.')
             # test print("file list is {}".format(file))
-            if file[1] not in extensions:
-                extensions.append(file[1])
+            # if file[1] not in extensions:
+            extensions.add(file[1])
             # test print("extensions list is {}".format(extensions))
     for extension in extensions:
         #exception for if directory already exists

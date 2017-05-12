@@ -55,14 +55,14 @@ def main():
             print("Taxis available:")
             display_taxis(taxis)
             current_taxi = taxis[get_taxi_choice()]
-            print("Bill to date: ${:.2f}".format(get_current_price(taxis)))
         elif menu_choice == 'd':
             trip_distance = int(input("Drive how far? "))
             pre_fare_total = get_current_price([current_taxi])
-            current_taxi.drive(trip_distance)
+            drove = current_taxi.drive(trip_distance)
+
             trip_fare = current_taxi.get_fare() - pre_fare_total
             print("Your {} trip cost you ${:.2f}".format(current_taxi.name, trip_fare))
-            print("Bill to date: ${:.2f}".format(get_current_price(taxis)))
+        print("Bill to date: ${:.2f}".format(get_current_price(taxis)))
         print(MENU)
         menu_choice = get_menu_choice()
     print("Total trip cost: ${:.2f}".format(get_current_price(taxis)))

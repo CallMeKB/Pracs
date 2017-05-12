@@ -1,5 +1,6 @@
 from prac8.taxi import Taxi
 
+
 class SilverServiceTaxi(Taxi):
     """Class for 'fancier' taxis"""
 
@@ -12,7 +13,7 @@ class SilverServiceTaxi(Taxi):
         """
         super().__init__(name, fuel)
         self.fanciness = fanciness
-        self.price_per_km = self.price_per_km * fanciness
+        self.price_per_km *= fanciness
 
     def __str__(self):
         """return a string like Taxi but with flagfall included"""

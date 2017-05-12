@@ -9,7 +9,7 @@ __author__ = 'Lindsay Ward'
 print("Current directory is", os.getcwd())
 
 # change to desired directory
-os.chdir('Lyrics/Christmas/temp')
+os.chdir('Lyrics/Christmas')
 # print a list of all files (test)
 # print(os.listdir('.'))
 
@@ -27,37 +27,7 @@ for filename in os.listdir('.'):
         os.rename(filename, new_name)
 
         # Option 2: move file to new place, with new name
-        shutil.move(filename, 'temp/' + new_name)
-
-        index = 0
-        formatted_name = filename
-        for letter in formatted_name:
-            if index == 0:
-                formatted_name = formatted_name[0].upper() + formatted_name[1:]
-            elif letter == '_':
-                formatted_name = formatted_name[:index+1] + formatted_name[index+1].upper() + formatted_name[index+2:]
-            elif letter.isupper() or letter == '(':
-                if formatted_name[index-1] != '_' or formatted_name[index-1] != '(':
-                    formatted_name = formatted_name[:index-1] + '_' + formatted_name[index-1:]
-        print(formatted_name)
-
-       # formatted_name = filename[1:]
-        #for letter in formatted_name:
-         #   if letter == '_':
-                #index method only finds first occurance?
-          #      underscore_position = formatted_name.index(letter)
-           #     if not formatted_name[underscore_position+1].isupper():
-            #        formatted_name = formatted_name[:underscore_position+1] + \
-             #                        formatted_name[underscore_position+1].upper() + \
-              #                       formatted_name[underscore_position+2]
-            #elif letter.isupper() or letter == "(":
-             #   capital_position = formatted_name.index(letter)
-              #  if formatted_name[capital_position-1] != '_' and formatted_name[capital_position-1] != '(':
-               #     formatted_name = formatted_name[:capital_position] + '_' + formatted_name[capital_position:]
-        #formatted_name = filename[0] + formatted_name
-        #print(formatted_name)
-
-
+        #shutil.move(filename, 'temp/' + new_name)
 
 # Processing subdirectories using os.walk()
 # os.chdir('..')
@@ -65,5 +35,7 @@ for filename in os.listdir('.'):
 #     print("In", dir_name)
 #     print("\tcontains subdirectories:", subdir_list)
 #     print("\tand files:", file_list)
+
+
 
 
