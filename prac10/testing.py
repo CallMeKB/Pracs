@@ -59,3 +59,28 @@ doctest.testmod()
 # 'It is an ex parrot.' -> 'It is an ex parrot.'
 # and one more you decide (that's valid!)
 # then write the body of the function so that the tests pass
+
+
+def format_phrase(phrase):
+    """
+    >>> format_phrase('hello') 
+    'Hello.'
+    >>> format_phrase('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> format_phrase('i love CP1404')
+    'I love CP1404.'
+    """
+    length = len(phrase)
+    valid = False
+    while not valid:
+        if phrase[0].isupper() and phrase[length - 1] == '.':
+            valid = True
+        elif phrase[0].islower():
+            phrase = phrase[0].upper() + phrase[1:]
+        elif phrase[length - 1] != '.':
+            phrase = phrase[:length] + '.'
+            valid = True
+
+    return phrase
+
+doctest.testmod()
