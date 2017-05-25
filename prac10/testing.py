@@ -80,7 +80,6 @@ def format_phrase(phrase):
         elif phrase[length - 1] != '.':
             phrase = phrase[:length] + '.'
             valid = True
-
     return phrase
 
 doctest.testmod()
